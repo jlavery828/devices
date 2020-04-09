@@ -1,0 +1,26 @@
+{% extends 'devices/main.html' %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">IP address</th>
+            <th scope="col">MAC address</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for obj in object_list %}
+                <tr>
+                <th scope="row">{{ obj.id }}</th>
+                <td>{{ obj.name }}</td>
+                <td><a href="http://{{ obj.ip }}/" target="_blank">{{ obj.ip }}</a></td>
+                <td>{{ obj.mac_address }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -9,4 +9,4 @@ def index(request):
         'object_list': switches
     }
 
-    return render(request, 'base.html', context)
+    return render(request, 'devices/dashboard.html', context)
